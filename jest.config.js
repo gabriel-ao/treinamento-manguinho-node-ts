@@ -5,14 +5,19 @@
 
 /** @type {import('jest').Config} */
 const config = {
-  roots: ["<rootDir>/src"],
-  collectCoverageFrom: ["<rootDir>/src/**/*.ts"],
-  coverageDirectory: "coverage",
-  testEnvironment: "node",
+  roots: ['<rootDir>/src'],
+  collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
+  coverageDirectory: 'coverage',
+  testEnvironment: 'node',
   transform: {
-    '.+\\.ts$': 'ts-jest'
+    '.+\\.ts$': 'ts-jest',
   },
 
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    '/presentation/protocols/', // Ignora essa pasta
+    '/presentation/controllers/signup/signup-protocols.ts', // Ignora este arquivo específico
+  ],
   // testEnvironment: "jest-environment-node", original
 };
 
