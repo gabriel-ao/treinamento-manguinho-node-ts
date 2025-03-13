@@ -1,6 +1,7 @@
 # comandos git
 
 ## git log
+
 Listar os commits que fiz
 
 ## listar configurações do git
@@ -13,12 +14,11 @@ git config --global = meu usuário pra qualquer projeto
 
 git config --local = apenas para o projeto escolhido
 
-
 ## criando atalhos no git
 
 git config --global --edit -> editar pelo VI
 
-git config --global core.editor code 
+git config --global core.editor code
 (OBS: depois de executar esse comando, executar novamente o 'git config --global --edit')
 
 ## padrão de commit
@@ -44,3 +44,9 @@ npm install husky --save-dev
 ## lib -> jest para TDD
 
 npm i -D jest @types/jest ts-jest
+
+melhorar o eslint desse projeto, base:
+
+{
+"\*.ts": ["eslint 'src/**' --fix", "npm run test:staged", "git add"]
+}

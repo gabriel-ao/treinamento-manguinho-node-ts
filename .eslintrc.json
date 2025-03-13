@@ -1,9 +1,8 @@
 {
-  "extends": "standard-with-typescript",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./CLEAN-NODE-API/tsconfig.json"
+    "project": "./tsconfig.json"
   },
-    "rules": {
-    "@typescript-eslint/strict-boolean-expressions": "error"
-  }
+  "plugins": ["@typescript-eslint"],
+  "extends": ["plugin:@typescript-eslint/recommended"]
 }
