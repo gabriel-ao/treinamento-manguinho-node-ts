@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "prepare": "husky install",
     "test:gab": "jest",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:unit": "npm test -- --watch -c jest-unit-config.js",
@@ -12,7 +11,8 @@
     "test:staged": "npm test",
     "test:staged2": "npm test -- --findRelatedTests",
     "test:ci": "npm test -- --coverage",
-    "commitmsg": "git-commit-msg-linter"
+    "commitmsg": "git-commit-msg-linter",
+    "prepare": "husky"
   },
   "author": "",
   "license": "ISC",
