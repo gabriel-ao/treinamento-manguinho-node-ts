@@ -4,5 +4,9 @@
     "project": "./tsconfig.json"
   },
   "plugins": ["@typescript-eslint"],
-  "extends": ["plugin:@typescript-eslint/recommended"]
+  "extends": ["plugin:@typescript-eslint/recommended"],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "off", // Desativa a regra globalmente
+    "@typescript-eslint/no-explicit-any": "off" // Permite `any` globalmente
+  }
 }

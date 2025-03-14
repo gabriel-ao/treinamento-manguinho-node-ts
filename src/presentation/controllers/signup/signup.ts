@@ -25,6 +25,7 @@ export class SignupController implements Controller {
         'password',
         'passwordConfirmation',
       ];
+
       for (const field of requiredFileds) {
         if (!httpRequest.body[field]) {
           return badRequest(new MissingParamError(field));
