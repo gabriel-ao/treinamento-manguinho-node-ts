@@ -44,9 +44,3 @@ npm install husky --save-dev
 ## lib -> jest para TDD
 
 npm i -D jest @types/jest ts-jest
-
-melhorar o eslint desse projeto, base:
-
-{
-"\*.ts": ["eslint 'src/**' --fix", "npm run test:staged", "git add"]
-}
