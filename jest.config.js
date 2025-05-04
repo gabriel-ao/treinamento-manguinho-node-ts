@@ -17,6 +17,7 @@ const config = {
     '/node_modules/',
     '/presentation/protocols/', // Ignora essa pasta
     '/presentation/controllers/signup/signup-protocols.ts', // Ignora este arquivo específico
+    '/data/usecases/add-account/db-add-account-protocols.ts', // Ignora este arquivo específico
   ],
   // testEnvironment: "jest-environment-node", original
 };
