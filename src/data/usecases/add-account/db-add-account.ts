@@ -22,17 +22,10 @@ export class DbAddAccount implements AddAccount {
     const hashedPassword = await this.encrypter.encrypt(accountData.password);
 
     // utilizando o Object.assign para adicionar a senha criptografada ao accountData
-    this.addAccountRepository.add(
+    const account = this.addAccountRepository.add(
       Object.assign({}, accountData, { password: hashedPassword })
     );
 
-    return new Promise((resolve) =>
-      resolve({
-        id: 'valid_id',
-        name: accountData.name,
-        email: accountData.email,
-        password: hashedPassword,
-      })
-    );
+    return account;
   }
 }
