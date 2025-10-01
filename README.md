@@ -45,4 +45,4 @@ npm install husky --save-dev
 
 npm i -D jest @types/jest ts-jest
 
-// TODO secao 7 - aula 17 - MINUTO 17:00
+// TODO secao 7 - aula 18 - MINUTO 07:00
