@@ -1,14 +1,15 @@
 import { Collection, MongoClient } from 'mongodb';
 import { AccountModel } from '../../../../domain/models/account';
+import { env } from '../../../../main/config/env';
 
 export const MongoHelper = {
   client: null as unknown as MongoClient,
 
   async connect(uri: string): Promise<void> {
-    if (!process.env.MONGO_URL) {
+    if (!env.mongoUrl) {
       throw new Error('MONGO_URL environment variable is not defined');
     }
-    this.client = await MongoClient.connect(process.env.MONGO_URL);
+    this.client = await MongoClient.connect(env.mongoUrl);
   },
 
   async disconnect(): Promise<void> {
