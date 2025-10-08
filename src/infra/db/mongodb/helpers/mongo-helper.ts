@@ -6,10 +6,9 @@ export const MongoHelper = {
   client: null as unknown as MongoClient,
 
   async connect(uri: string): Promise<void> {
-    if (!env.mongoUrl) {
-      throw new Error('MONGO_URL environment variable is not defined');
-    }
-    this.client = await MongoClient.connect(env.mongoUrl);
+    console.log('Connecting to MongoDB...' + uri);
+    this.client = await MongoClient.connect(uri);
+    console.log('Connected to MongoDB');
   },
 
   async disconnect(): Promise<void> {
@@ -25,6 +24,8 @@ export const MongoHelper = {
 
   map: (collection: any): any => {
     const { _id, ...collectionWithoutId } = collection;
-    return Object.assign({}, collectionWithoutId, { id: _id });
+    return Object.assign({}, collectionWithoutId, {
+      id: _id?.toString ? _id.toString() : _id,
+    });
   },
 };

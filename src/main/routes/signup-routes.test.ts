@@ -15,7 +15,7 @@ describe('Signup Routes', () => {
   });
 
   beforeEach(async () => {
-    const accountCollection = await MongoHelper.getCollection('accounts');
+    const accountCollection = MongoHelper.getCollection('accounts');
     await accountCollection.deleteMany({});
   });
 
@@ -26,6 +26,7 @@ describe('Signup Routes', () => {
         name: 'John Doe',
         email: 'john.doe@example.com',
         password: '123456',
+        passwordConfirmation: '123456',
       })
       .expect(200);
   });
