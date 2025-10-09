@@ -45,4 +45,8 @@ npm install husky --save-dev
 
 npm i -D jest @types/jest ts-jest
 
-// TODO secao 7 - aula 20 - MINUTO 22:23
+## url mongo db
+
+http://localhost:8081/db/clean-node-api/accounts?key=&value=&type=S
+
+// TODO secao 8 - aula 22 - MINUTO 00:00
