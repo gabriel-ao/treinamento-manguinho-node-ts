@@ -1,5 +1,5 @@
 import request from 'supertest';
-import { app } from '../config/app';
+import { app, waitForRoutes } from '../config/app';
 import { MongoHelper } from '../../infra/db/mongodb/helpers/mongo-helper';
 
 describe('Signup Routes', () => {
@@ -8,6 +8,7 @@ describe('Signup Routes', () => {
       throw new Error('MONGO_URL environment variable is not defined');
     }
     await MongoHelper.connect(process.env.MONGO_URL);
+    await waitForRoutes();
   });
 
   afterAll(async () => {

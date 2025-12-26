@@ -11,11 +11,18 @@ setupRoutes(app)
   .then(() => {
     routesInitialized = true;
   })
-  .catch(console.error);
+  .catch((error) => {
+    console.error('Error setting up routes:', error);
+    routesInitialized = true; // Marcar como inicializado mesmo com erro para evitar loop infinito
+  });
 
 // Função para aguardar inicialização das rotas (usado em testes)
-export const waitForRoutes = async (): Promise<void> => {
+export const waitForRoutes = async (timeout: number = 5000): Promise<void> => {
+  const startTime = Date.now();
   while (!routesInitialized) {
+    if (Date.now() - startTime > timeout) {
+      throw new Error('Timeout waiting for routes to initialize');
+    }
     await new Promise((resolve) => setTimeout(resolve, 10));
   }
 };
