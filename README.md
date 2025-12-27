@@ -49,4 +49,4 @@ npm i -D jest @types/jest ts-jest
 
 http://localhost:8081/db/clean-node-api/accounts?key=&value=&type=S
 
-// TODO secao 8 - aula 25 - MINUTO 13:49
+// TODO secao 8 - aula 25 - MINUTO 15:09
