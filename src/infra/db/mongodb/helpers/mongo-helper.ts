@@ -27,8 +27,20 @@ export const MongoHelper = {
 
   map: (collection: any): any => {
     const { _id, ...collectionWithoutId } = collection;
+    let id = _id;
+
+    // Se _id é um número, mantém como número
+    if (typeof _id === 'number') {
+      id = _id;
+    }
+    // Se _id tem método toString (como ObjectId do MongoDB), converte para string
+    else if (_id?.toString && typeof _id.toString === 'function') {
+      id = _id.toString();
+    }
+    // Caso contrário, usa o valor original
+
     return Object.assign({}, collectionWithoutId, {
-      id: _id?.toString ? _id.toString() : _id,
+      id,
     });
   },
 };
