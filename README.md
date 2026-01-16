@@ -50,3 +50,13 @@ npm i -D jest @types/jest ts-jest
 http://localhost:8081/db/clean-node-api/accounts?key=&value=&type=S
 
 // TODO secao 8 - aula 25 - MINUTO 15:09
+
+## Criando tag via linha de comando
+
+git tag -a "1.0.0" -m "1.0.0"
+
+## enviar a tag via linha de comando
+
+git push origin main --follow-tags -> não recomendado
+
+git push origin main - após configurar o followTags = true
